@@ -1,0 +1,22 @@
+<ng-container *ngIf="peopleList$ | async; let peopleList">
+  <div
+    class="container"
+    infiniteScroll
+    [infiniteScrollDistance]="0.5"
+    (scrolled)="onScroll()"
+  >
+    <div *ngFor="let person of peopleList"
+         class="list"
+    >
+      <div class="list__cell">{{person.name}}</div>
+      <div class="list__cell">{{person.gender}}</div>
+      <div class="list__cell">{{person.height}}</div>
+      <div class="list__cell">
+        <a routerLink="/people/{{person.id}}">
+          <button>More details...</button>
+        </a>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,5 @@
+<ng-container *ngIf="personDetail$ | async; let person">
+  <div class="list__cell">Eye color: {{person.eye_color}}</div>
+  <div class="list__cell">Hair color: {{person.hair_color}}</div>
+  <div class="list__cell">Skin color: {{person.skin_color}}</div>
+</ng-container>
